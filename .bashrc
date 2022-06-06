@@ -36,6 +36,8 @@ cdd() {
 sxx() {
   cd ~/cp
   gfp
+  cd ~/.config/nvim
+  gfp
   cd ~
   gfp
 }
@@ -43,6 +45,8 @@ sxx() {
 
 exx() {
   cd ~/cp
+  gup
+  cd ~/.config/nvim
   gup
   cd ~
   gup

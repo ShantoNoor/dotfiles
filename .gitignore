@@ -1,0 +1,10 @@
+/*
+
+!.gitignore
+!.gitconfig
+!.bashrc
+!.zshrc
+
+**/.DS_Store
+**.log
+

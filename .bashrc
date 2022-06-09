@@ -53,3 +53,6 @@ exx() {
   exit
 }
 
+cl() {
+  g cl git@github.com:ShantoNoor/"$1".git
+}

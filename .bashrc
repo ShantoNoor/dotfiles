@@ -19,6 +19,7 @@ alias ccp="cd ~/cp && vi -S ccp.vim"
 alias acp="cd ~/cp && vi -S acp.vim"
 alias clip="termux-clipboard-set"
 alias plip="termux-clipboard-get"
+alias pdla="proot-distro login alpine"
 
 copydd() {
   cp -r "$1" /storage/emulated/0/download

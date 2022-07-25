@@ -13,4 +13,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.bashrc
 
 alias ezrc="vim ~/.zshrc"
-alias szrc="source ~/.zshrc"
+alias szrc="source ~/.zshsc"

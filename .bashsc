@@ -17,10 +17,16 @@ alias ebsc="nvim ~/.bashsc"
 alias sbsc="source ~/.bashsc"
 
 alias cls="clear"
+alias rr="ranger"
 
 alias ls="lsd"
 alias ll="ls -a"
 alias la="ls -la"
+
+if [[ "`uname -v`" == "#1 SMP PREEMPT Fri Dec 10 13:53:37 WIB 2021" ]]
+then
+  alias ls="ls"
+fi
 
 termux_ash="/bin/ash"
 termux_zsh="/data/data/com.termux/files/usr/bin/zsh"

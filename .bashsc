@@ -1,6 +1,7 @@
 alias g="git"
 alias gt="git"
 alias gup="g aa && g cmu && g ps"
+alias gup="g aa && g cmf && g ps"
 alias gfp="g fs && g pl"
 
 alias vim="nvim"

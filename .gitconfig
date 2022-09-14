@@ -28,6 +28,8 @@
   ba = branch -a
   bm = branch --merged
   bn = branch --no-merged
+  r = reset
+  rh = reset --hard
 
 [github]
 	user = ShantoNoor

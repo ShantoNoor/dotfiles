@@ -20,6 +20,7 @@
   cmm = commit -m 
   cmu = commit -m "Update"
   cmf = commit -m "Fix"
+  cmc = commit -m "Coding"
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   st = status

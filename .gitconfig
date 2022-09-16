@@ -41,4 +41,4 @@
 	directory = /storage/emulated/0/Download/pages
 
 [core]
-	editor = nvim --wait
+	editor = nvim 

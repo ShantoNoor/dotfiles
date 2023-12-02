@@ -14,3 +14,5 @@ source ~/.bashsc
 
 alias ezrc="vim ~/.zshrc"
 alias szrc="source ~/.zshsc"
+eval "$(pyenv init --path)"
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}

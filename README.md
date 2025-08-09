@@ -1,40 +1,35 @@
 # stow
-> stow dots
-> stow nvim
-> stow clangd-macos
-> stow clangd-linux
-> stow ghostty 
-> stow kitty 
-> stow cp-root 
+`dots` `nvim` `clangd-macos` `clangd-linux` `ghostty` `kitty` `cp-root`
+
 ## sh
-"""sh
+```sh
 stow dots nvim ghostty cp-root clangd-macos
-"""
-"""sh
+```
+```sh
 stow dots nvim ghostty cp-root clangd-linux
-"""
+```
 
 # dots
 ## bash
-"""bash
+```bash
 echo 'source ~/.bashsc' >> ~/.bashrc
 source ~/.bashrc
-"""
+```
 ## zsh
-"""bash
+```bash
 echo 'source ~/.bashsc' >> ~/.zshrc
 source ~/.zshrc
-"""
+```
 
 # nvim
 ## lsps
-    - clangd
-    - lua-language-server
+> `clangd`
+> `lua-language-server`
 ## formatters
-    - stylua
+> `stylua`
 ## variables
-    - gpp
-    - gpp_args
+> `gpp='g++'`
+> `gpp_args='-std=c++20'`
 
 # cp-root
-> g++ -std=c++20 -O3 -x c++-header stdc++.h -o stdc++.h.gch
+>> `g++ -std=c++20 -O3 -x c++-header stdc++.h -o stdc++.h.gch`

@@ -1,0 +1,8 @@
+theme = carbonfox
+macos-option-as-alt = true
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 16
+background-opacity = 0.85
+background-blur = true
+window-height = 30
+window-width = 120

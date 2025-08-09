@@ -17,10 +17,6 @@
   ck = checkout
   cl = clone
   cm = commit
-  cmm = commit -m 
-  cmu = commit -m "Update"
-  cmf = commit -m "Fix"
-  cmc = commit -m "Coding"
   ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
   pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
   st = status
@@ -34,11 +30,6 @@
 
 [github]
 	user = ShantoNoor
-
-[safe]
-	directory = /storage/emulated/0/BlackHole
-	directory = /storage/emulated/0/download/cp_pdfs
-	directory = /storage/emulated/0/Download/pages
 
 [core]
 	editor = nvim 

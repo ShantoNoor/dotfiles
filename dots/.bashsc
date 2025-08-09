@@ -1,0 +1,13 @@
+alias g="git"
+alias gfp="g fs && g pl"
+
+alias vim="nvim"
+alias vi="nvim"
+
+alias ls="lsd"
+alias ll="ls -a"
+alias la="ls -la"
+
+alias cls="clear"
+
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}

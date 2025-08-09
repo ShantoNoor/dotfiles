@@ -1,12 +1,4 @@
-/*
-
-!.gitignore
-!.gitconfig
-!.bashrc
-!.bashsc
-!.zshrc
-!ash-setup.sh
-
-**/.DS_Store
 **.log
-
+**.gch
+**.pch
+**.DS_Store

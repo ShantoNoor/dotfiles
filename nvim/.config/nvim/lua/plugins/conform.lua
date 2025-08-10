@@ -29,16 +29,13 @@ return { -- Autoformat
       end
     end
     local formatters_by_ft = {
-      -- lua = { 'stylua' },
+      lua = { 'stylua' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     }
-    if vim.fn.executable("stylua") == 1 then
-      formatters_by_ft.lua = { "stylua" }
-    end
     require("conform").setup({ notify_on_error, format_on_save, formatters_by_ft })
   end,
 }

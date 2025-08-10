@@ -134,7 +134,7 @@ return {
         specs = {},
         groups = {},
       })
-      vim.cmd("colorscheme carbonfox")
+      -- vim.cmd("colorscheme carbonfox")
     end
   },
   {
@@ -168,7 +168,7 @@ return {
       -- setup must be called before loading
       -- vim.cmd("colorscheme kanagawa")
       -- vim.cmd("colorscheme kanagawa-wave")
-      -- vim.cmd("colorscheme kanagawa-dragon")
+      vim.cmd("colorscheme kanagawa-dragon")
       -- vim.cmd("colorscheme kanagawa-lotus")
     end
   }

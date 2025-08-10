@@ -41,7 +41,7 @@ keymap.set("n", "<C-j>", "<C-w>j")
 keymap.set("n", "<C-l>", "<C-w>l")
 
 keymap.set("n", "<C-s>", ":wa!<Return>")
-keymap.set("n", "<C-q>", ":wa!<Return>:qa!<Return>")
+keymap.set("n", "<C-q>", ":qa!<Return>")
 
 keymap.set("n", "<leader>/", Layout0)
 keymap.set("n", "<leader>.", Layout2)

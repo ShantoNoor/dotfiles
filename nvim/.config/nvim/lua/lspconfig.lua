@@ -51,7 +51,7 @@ vim.lsp.config("pylsp", {
         -- auto-completion options
         jedi_completion = { fuzzy = true },
         -- import sorting
-        isort = { enabled = true },
+        isort = { enabled = false },
       },
     },
   },

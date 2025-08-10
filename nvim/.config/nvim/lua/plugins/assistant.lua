@@ -15,7 +15,7 @@ return {
 			commands = {
 				cpp = {
 					extension = "cpp",
-					template = vim.g.cp_root .. "cpp.snip.cpp",
+					template = nil,
 					compile = {
 						main = vim.g.gpp,
 						-- Use the table we just created

@@ -1,5 +1,5 @@
 if vim.fn.executable("clangd") == 1 then
-	if OS_NAME == "Darwin" then
+	if vim.g.os_name == "Darwin" then
 		vim.lsp.config("clangd", {
 			cmd = {
 				"clangd",

@@ -1,9 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- telescope
-keymap.set("n", "<leader>ff", ":Telescope find_files<cr>")
-
 -- commentry
 keymap.set({ "n", "v" }, "<C-t>", ":CommentToggle<cr>")
 keymap.set({ "n", "v" }, "<C-/>", ":CommentToggle<cr>")
@@ -51,4 +48,4 @@ keymap.set("n", "<leader>.", Layout2)
 keymap.set("n", "<leader>,", Layout1)
 
 keymap.set({ "n", "i" }, "<C-b>", _cpp_build_and_run_io, opts)
-keymap.set({ "n", "i" }, "<A-b>", _ast_run, opts)
+keymap.set({ "n", "i" }, "<M-b>", _ast_run, opts)

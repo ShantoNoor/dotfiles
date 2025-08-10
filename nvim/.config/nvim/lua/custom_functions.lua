@@ -57,7 +57,8 @@ function _cpp_build_and_run_io()
 		.. "debug.txt"
 
 	vim.cmd("wa")
-	vim.cmd(cpp_cmd)
+	local result =  vim.fn.system(cpp_cmd)
+  vim.notify(result)
 end
 
 function _ast_run()

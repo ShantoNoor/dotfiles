@@ -3,9 +3,9 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 vim.g.gpp = "g++"
-OS_NAME = vim.fn.system("uname -o"):gsub("%s+$", "")
+vim.g.os_name = vim.fn.system("uname -o"):gsub("%s+$", "")
 
-if OS_NAME == "Darwin" then
+if vim.g.os_name == "Darwin" then
 	vim.g.gpp = "g++-15"
 end
 

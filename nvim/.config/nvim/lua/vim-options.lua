@@ -17,7 +17,7 @@ vim.opt.autoindent = true -- auto indentation
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.breakindent = true
-vim.opt.list = true -- show tab characters and trailing whitespace
+vim.opt.list = false -- show tab characters and trailing whitespace
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.ignorecase = true -- ignore case when searching

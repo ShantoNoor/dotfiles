@@ -33,7 +33,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("lazy").setup("plugins")
+
+require("lsp.clangd")
+require("lsp.lua_ls")
+require("lsp.pylsp")
 require("lspconfig")
+
 require("custom_functions")
 require("keymaps")
 require("snippets_generator")

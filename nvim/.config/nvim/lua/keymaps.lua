@@ -49,3 +49,4 @@ keymap.set("n", "<leader>,", Layout1)
 
 keymap.set({ "n", "i" }, "<C-b>", _cpp_build_and_run_io, opts)
 keymap.set({ "n", "i" }, "<M-b>", _ast_run, opts)
+keymap.set({ "n", "i" }, "<M-s>", _ast_show, opts)

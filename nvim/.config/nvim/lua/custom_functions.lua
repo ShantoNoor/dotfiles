@@ -61,7 +61,7 @@ function _cpp_build_and_run_io()
 end
 
 function _ast_run()
-  vim.notify('C++ Running All Test Cases')
+	vim.notify("C++ Running All Test Cases")
 	vim.cmd("wa")
 	vim.cmd("Assistant")
 
@@ -71,3 +71,7 @@ function _ast_run()
 	end)
 end
 
+function _ast_show()
+	vim.cmd("wa")
+	vim.cmd("Assistant")
+end

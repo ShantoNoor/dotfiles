@@ -1,9 +1,6 @@
 return {
 	"A7lavinraj/assistant.nvim",
 	lazy = false,
-	keys = {
-		{ "<M-s>", "<cmd>Assistant<cr>", desc = "Assistant.nvim" },
-	},
 	config = function()
 		local cpp_compile_args = vim.deepcopy(vim.g.gpp_args)
 
@@ -38,4 +35,3 @@ return {
 		})
 	end,
 }
-

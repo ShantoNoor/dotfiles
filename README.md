@@ -1,8 +1,16 @@
 # dotfiles
 
+## Setup
+
+## Competitive Companion Setup
+
+> `add port 12345`
+
 ## nvim
 
 ## lsps
+
+> `Run :MasonToolsInstall`
 
 > `clangd` `pylsp`
 

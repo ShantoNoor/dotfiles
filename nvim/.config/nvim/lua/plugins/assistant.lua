@@ -1,6 +1,7 @@
 return {
 	"A7lavinraj/assistant.nvim",
 	lazy = false,
+	tag = "v3.1.0",
 	config = function()
 		local cpp_compile_args = vim.deepcopy(vim.g.gpp_args)
 

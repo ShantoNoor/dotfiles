@@ -63,15 +63,15 @@ end
 function _ast_run()
 	vim.notify("C++ Running All Test Cases")
 	vim.cmd("wa")
-	vim.cmd("Assistant")
+	vim.cmd("AssistantToggle")
 
 	vim.schedule(function()
-		local key = vim.api.nvim_replace_termcodes("r", true, false, true)
+		local key = vim.api.nvim_replace_termcodes("R", true, false, true)
 		vim.api.nvim_feedkeys(key, "", false)
 	end)
 end
 
 function _ast_show()
 	vim.cmd("wa")
-	vim.cmd("Assistant")
+	vim.cmd("AssistantToggle")
 end

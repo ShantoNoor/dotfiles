@@ -7,6 +7,9 @@ using namespace std;
 // create precompile-header
 // clang++ -std=c++20 -I"./" -DDEBUG -O3 debug.h
 
+#define ff first
+#define ss second
+
 class cpprint {
 public:
     template<class T>

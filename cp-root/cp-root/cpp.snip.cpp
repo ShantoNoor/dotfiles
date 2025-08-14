@@ -1,6 +1,4 @@
 #include<bits/stdc++.h>
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
 #ifdef DEBUG
 #include <debug.h>
 #else
@@ -8,7 +6,6 @@
 #define debr(arr, s, e)
 #endif
 using namespace std;
-using namespace __gnu_pbds;
 
 #define ff first
 #define ss second
@@ -33,7 +30,6 @@ using namespace __gnu_pbds;
 #define vmax(a) *max_element(all(a))
 template <typename T> using pqb = priority_queue<T>; 
 template <typename T> using pqs = priority_queue<T, vector<T>, greater<T>>; 
-template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 void solve(int tc) {
   $0

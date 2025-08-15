@@ -38,10 +38,10 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename" },
-				lualine_x = { "encoding", "fileformat", "filetype" },
-				lualine_y = { "progress" },
+				lualine_b = { "diagnostics" },
+				lualine_c = { { "filename", path = 1 } },
+				lualine_x = { "encoding", "filetype" },
+				lualine_y = {},
 				lualine_z = { "location" },
 			},
 			inactive_sections = {

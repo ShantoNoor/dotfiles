@@ -61,6 +61,7 @@ function _cpp_build_and_run_io()
 end
 
 function _ast_run()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 	vim.notify("C++ Running All Test Cases")
 	vim.cmd("wa")
 	vim.cmd("AssistantToggle")
@@ -72,6 +73,7 @@ function _ast_run()
 end
 
 function _ast_show()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 	vim.cmd("wa")
 	vim.cmd("AssistantToggle")
 end

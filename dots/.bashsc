@@ -28,8 +28,8 @@ cpp() {
     # If cp session doesn’t exist, create it
     if ! tmux has-session -t=cp 2>/dev/null; then
         tmux new-session -ds cp -c "$HOME/cp"
-        tmux new-window -t cp -n nvim "nvim"
-        tmux new-window -t cp -n ipython "ipython"
+        tmux new-window -t cp -c "$HOME/cp" -n nvim "nvim"
+        tmux new-window -t cp -c "$HOME/cp" -n ipython "ipython"
         tmux kill-window -t cp:1 2>/dev/null || true
         tmux select-window -t cp:nvim
     fi

@@ -11,3 +11,35 @@ alias la="ls -la"
 alias cls="clear"
 
 function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+
+cpp() {
+    # Check if ~/cp exists
+    if [ ! -d "$HOME/cp" ]; then
+        echo "Directory ~/cp not found!"
+        return 1
+    fi
+
+    # If already inside cp session → do nothing
+    if [[ -n $TMUX && $(tmux display-message -p "#S") == "cp" ]]; then
+        return 0
+    fi
+
+    # If cp session doesn’t exist, create it
+    if ! tmux has-session -t=cp 2>/dev/null; then
+        tmux new-session -ds cp -c "$HOME/cp"
+        tmux new-window -t cp -n nvim "nvim"
+        tmux new-window -t cp -n ipython "ipython"
+        tmux kill-window -t cp:1 2>/dev/null || true
+        tmux select-window -t cp:nvim
+    fi
+
+    # If inside tmux → switch, else attach
+    if [[ -z $TMUX ]]; then
+        tmux attach-session -t cp
+    else
+        tmux switch-client -t cp
+    fi
+
+}
+

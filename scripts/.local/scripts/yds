@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# yds.sh: A script to download, process, and condense YouTube Bengali subtitles.
+# Usage: yds.sh <YOUTUBE_LINK> <FILE_NAME>
+#
+# Arguments:
+#   YOUTUBE_LINK: The full URL of the YouTube video.
+#   FILE_NAME: The desired base name for the output file (e.g., "my_video_subs").
+#              The script will create a file named <FILE_NAME>.txt.
+
+# Check if both arguments are provided
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: $0 <YOUTUBE_LINK> <FILE_NAME>"
+    echo "Example: $0 https://www.youtube.com/watch?v=dQw4w9WgXcQ my_rickroll_subs"
+    exit 1
+fi
+
+YOUTUBE_LINK="$1"
+FILE_NAME="$2"
+OUTPUT_FILE="${FILE_NAME}.txt"
+
+echo "Step 1: Downloading SRT file for ${YOUTUBE_LINK} to ${OUTPUT_FILE}..."
+# 1. Download the srt file and write it to a file named FILE_NAME.txt
+#    --skip-download: Skips downloading the video.
+#    --write-auto-subs: Writes automatically generated subtitles.
+#    --sub-lang bn: Specifies Bengali as the subtitle language.
+#    --sub-format srt: Specifies SRT as the subtitle format.
+#    -o "$FILE_NAME": Specifies the output file name template.
+yt-dlp --skip-download --write-auto-subs --sub-lang bn --sub-format srt "$YOUTUBE_LINK" -o "$FILE_NAME"
+
+# yt-dlp might output the file as FILE_NAME.bn.srt or FILE_NAME.srt
+# We store the actual downloaded SRT file name to ensure it's removed later.
+DOWNLOADED_SRT_FILE=""
+if [ -f "${FILE_NAME}.bn.srt" ]; then
+    DOWNLOADED_SRT_FILE="${FILE_NAME}.bn.srt"
+    mv "${FILE_NAME}.bn.srt" "$OUTPUT_FILE"
+elif [ -f "${FILE_NAME}.srt" ]; then
+    DOWNLOADED_SRT_FILE="${FILE_NAME}.srt"
+    mv "${FILE_NAME}.srt" "$OUTPUT_FILE"
+else
+    echo "Error: Subtitle file not found after download. Expected ${FILE_NAME}.bn.srt or ${FILE_NAME}.srt"
+    exit 1
+fi
+
+echo "Step 2: Removing timestamps and line numbers from ${OUTPUT_FILE}..."
+# 2. Use sed to remove the time stamp and SRT index from the FILE_NAME.txt
+#    -i: Edits the file in place.
+#    -e 's/^[0-9]\+$//': Removes lines containing only numbers (SRT index).
+#    -e 's/^[0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\},[0-9]\{3\} --> [0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\},[0-9]\{3\}$//': Removes timestamp lines.
+#    -e '/^$/d': Deletes any resulting empty lines.
+sed -i -e 's/^[0-9]\+$//' -e 's/^[0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\},[0-9]\{3\} --> [0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\},[0-9]\{3\}$//' -e '/^$/d' "$OUTPUT_FILE"
+
+echo "Step 3: Condensing ${OUTPUT_FILE} to one line..."
+# 3. Condense FILE_NAME.txt to one line
+#    -i: Edits the file in place.
+#    :a;N;$!ba;: Creates a loop that appends all lines into the pattern space.
+#    s/\n/ /g: Replaces all newline characters with spaces.
+sed -i ':a;N;$!ba;s/\n/ /g' "$OUTPUT_FILE"
+
+echo "Processing complete. Final output saved to ${OUTPUT_FILE}"
+
+# Step 4: Clean up any remaining temporary SRT files
+if [ -n "$DOWNLOADED_SRT_FILE" ] && [ -f "$DOWNLOADED_SRT_FILE" ]; then
+    echo "Cleaning up temporary file: $DOWNLOADED_SRT_FILE"
+    rm "$DOWNLOADED_SRT_FILE"
+fi
+
+exit 0

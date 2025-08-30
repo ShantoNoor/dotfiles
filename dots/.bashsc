@@ -1,5 +1,6 @@
 alias g="git"
 alias gfp="g fs && g pl"
+alias gup="g aa && g cm -m "update" && g ps"
 
 alias vim="nvim"
 alias vi="nvim"

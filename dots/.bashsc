@@ -43,4 +43,4 @@ cpp() {
 
 }
 
-export PATH="/home/shanto/dotfiles/scripts/.local/scripts:$PATH"
+export PATH="$HOME/.local/scripts:$PATH"
